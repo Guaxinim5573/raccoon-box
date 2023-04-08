@@ -1,0 +1,29 @@
+{
+  "name": "raccoon-box",
+  "version": "0.0.1",
+  "author": "Guaxinim5573",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/Guaxinim5573/raccoon-box#readme",
+  "bugs": {
+    "url": "https://github.com/Guaxinim5573/raccoon-box/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guaxinim5573/raccoon-box.git"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/node": "^18.15.11",
+    "prisma": "^4.12.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^7.6.0",
+    "@fastify/type-provider-typebox": "^3.0.0",
+    "@prisma/client": "^4.12.0",
+    "@sinclair/typebox": "^0.26.8",
+    "bcryptjs": "^2.4.3",
+    "fastify": "^4.15.0"
+  }
+}

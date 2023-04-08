@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model File {
+  hash        String    @id @map("_id")
+  // File name + extension 
+  filename    String    @unique
+  createdAt   DateTime  @default(now())
+
+  // "public"  file is avaible to anyone
+  // "hidden"  file is avaible to anyone with an api key
+  // "private" file is avaible only to the uploader
+  visibility  String
+  expiration  DateTime
+
+  author      User    @relation(fields: [authorId], references: [id])
+  authorId    String
+}
+
+model User {
+  id          String    @id @map("_id")
+  createdAt   DateTime  @default(now())
+  name        String
+  password    String
+  apiKey      String @unique
+  files       File[]
+}

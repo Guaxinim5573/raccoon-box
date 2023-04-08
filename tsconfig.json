@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "outDir": "dist/",
+        "noImplicitAny": true,
+        "noUncheckedIndexedAccess": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "paths": {}
+    },
+    "extends": "@tsconfig/node18/tsconfig.json",
+    "include": ["src/"]
+}
