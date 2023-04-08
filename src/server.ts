@@ -1,13 +1,17 @@
 import fastifyMultipart from "@fastify/multipart";
 import Fastify, { FastifyInstance } from "fastify"
-import { FASTIFY_OPTIONS, FASTIFY_LISTEN_OPTIONS } from "./config"
+import { FASTIFY_OPTIONS, FASTIFY_LISTEN_OPTIONS, MAX_FILE_SIZE } from "./config"
 
 import userRoutes from "./routes/api/user";
 import filesRoutes from "./routes/api/files";
 
 const app: FastifyInstance = Fastify(FASTIFY_OPTIONS)
 
-app.register(fastifyMultipart)
+app.register(fastifyMultipart, {
+    limits: {
+        fileSize: MAX_FILE_SIZE
+    }
+})
 app.register(userRoutes, {
     prefix: "/api/user"
 })

@@ -6,6 +6,10 @@ import { FastifyListenOptions } from "fastify"
  * Make sure to end with "/"
  */
 export const STORAGE_PATH = "./files/"
+/**
+ * Maximum file size in bytes
+ */
+export const MAX_FILE_SIZE = 30000000
 
 /**
  * Allow users without an api key to upload files
